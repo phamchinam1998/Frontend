@@ -2,17 +2,22 @@ import React, { useEffect, useState } from "react";
 import "./payment.scss";
 import PaymentItem from "./item";
 import { useSelector } from "react-redux";
+import emptyCart from '../navigation/cart/emptycart.png';
 
 export default function Payments() {
     const [cart, setCart] = useState([]);
     const totalmoney = useSelector(state => state.totalMoney)
 
     useEffect(() => {
-        setCart(window.localStorage.getItem('PCN-Cart').split("&"));
+        const Cart = window.localStorage.getItem('PCN-Cart')
+        if (Cart) {
+            setCart(Cart.split("&"))
+        }
     }, [])
 
     return (
         <>
+
             <div id="payment-container">
                 <div id="payment-group">
                     <div id="payment-table-header">
@@ -22,6 +27,7 @@ export default function Payments() {
                         <h5 style={{ flex: "0 1 150px" }}>Số tiền</h5>
                     </div>
                     <div id="product-info-group">
+                        {cart.length === 0 ? <div id="img-container"><img id="empty-cart-img" src={emptyCart} alt="" /></div> : <></>}
                         {cart.map((id, index) => {
                             return (
                                 <PaymentItem key={index} id={id} />
