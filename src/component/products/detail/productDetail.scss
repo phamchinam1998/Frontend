@@ -1,0 +1,313 @@
+#product-detail-conntainer {
+    width: 80%;
+    background-color: #ccc;
+    margin: 130px auto 130px;
+    justify-content: center;
+    padding: 10px;
+    .product-detail-item {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 500px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        #product-image {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 500px;
+            #main-img {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                margin: 10px;
+                flex: 0 0 350px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                i {
+                    cursor: pointer;
+                    position: absolute;
+                    transition: 0.2s;
+                    top: 48%;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    &:first-child {
+                        left: 5px;
+                    }
+                    &:last-child {
+                        right: 5px;
+                    }
+                }
+                img {
+                    cursor: pointer;
+                    background-color: rgb(231, 231, 231);
+                    width: 400px;
+                    height: 300px;
+                    object-fit: contain;
+                }
+            }
+            #list-img {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 10px;
+                flex: 0 0 200px;
+                .item-img {
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px;
+                    flex: 1 1;
+                    margin: 5px;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    img {
+                        cursor: pointer;
+                        background-color: rgb(231, 231, 231);
+                        width: 100px;
+                        height: 100px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+        .detail-info {
+            display: flex;
+            flex-direction: column;
+            flex: 3 2 400px;
+            order: 2;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            h4 {
+                flex: 0 0 30px;
+                margin: 0;
+                border-bottom: 3px solid #00000031;
+                vertical-align: baseline;
+            }
+            #info-coupon {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1 1;
+                border-bottom: 3px solid #00000031;
+                #coupon {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 1 200px;
+                    margin: 5px;
+                    .item {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1 1 100px;
+                        margin: 10px;
+                        border-radius: 0 0 10px 10px;
+                        box-shadow: 3px 3px 4px #00000031;
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            position: absolute;
+                            top: -15px;
+                            right: -20px;
+                            object-fit: contain;
+                            z-index: 1;
+                        }
+                        .title {
+                            position: relative;
+                            flex: 0 0 30px;
+                            border-radius: 10px 10px 0 0;
+                            background-image: linear-gradient(to right, red, rgb(255, 102, 0));
+                        }
+                        .content {
+                            flex: 1 1;
+                            background-color: rgb(243, 243, 243);
+                            border-radius: 0 0 10px 10px;
+                        }
+                    }
+                }
+                #info {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 1 400px;
+                    // border-right: 3px solid #00000031;
+                    margin: 5px;
+                    #configuration {
+                        flex: 1 1 200px;
+                        margin: 10px;
+                        #description {
+                            h5,
+                            h6 {
+                                margin-bottom: 0px;
+                                margin-top: 15px;
+                            }
+                        }
+                        .item-info {
+                            display: flex;
+                            &:nth-child(odd) {
+                                background-color: rgb(228, 220, 220);
+                            }
+                            h5 {
+                                flex: 0 0 150px;
+                                margin: 5px;
+                            }
+                            h6 {
+                                flex: 1 1;
+                                margin: 5px 0px 0px 15px;
+                            }
+                        }
+                    }
+                    #rate {
+                        flex: 0 0 250px;
+                        margin: 10px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        border: 1px solid #00000031;
+                        #item-1 {
+                            display: flex;
+                            height: 15%;
+                            width: 100%;
+                            background-color: white;
+                            border-bottom: 1px solid #00000031;
+                            #average-rate {
+                                display: flex;
+                                flex: 0 0 70%;
+                                padding: 5px;
+                                h2 {
+                                    text-align: center;
+                                    margin: 0;
+                                    flex: 0 0 40px;
+                                    color: #f13c20;
+                                }
+                                img {
+                                    padding: 5px;
+                                    flex: 1 1;
+                                    object-fit: contain;
+                                }
+                            }
+                            #number-rate {
+                                flex: 1 1;
+                                padding: 10px;
+                                h4 {
+                                    border: none;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                        #item-2 {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            li {
+                                padding: 5px;
+                                display: flex;
+                                flex: 1 1;
+                                list-style-type: none;
+                                .star {
+                                    flex: 0 0 40px;
+                                }
+                                .progress-rate {
+                                    margin: 10px;
+                                    flex: 1 1;
+                                    height: 5px;
+                                    background-color: #ccc;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    div {
+                                        height: 100%;
+                                        background-color: #f13c20;
+                                    }
+                                }
+                            }
+                        }
+                        #rate-btn {
+                            margin: auto;
+                            width: 100%;
+                            height: 30px;
+                            text-align: center;
+                            display: flex;
+                            background-color: #f13c20;
+                            * {
+                                color: white;
+                            }
+                            h4 {
+                                cursor: pointer;
+                                transition: 0.3s;
+                                border: none;
+                                margin: 5px;
+                                flex: 0 0 80px;
+                            }
+                            form {
+                                flex: 1 1;
+                                display: flex;
+                                flex-direction: row-reverse;
+                                justify-content: flex-end;
+                                input {
+                                    visibility: hidden;
+                                    &:checked {
+                                        & ~ label {
+                                            color: yellow;
+                                        }
+                                    }
+                                }
+                                label {
+                                    display: inline;
+                                    flex: 0 0;
+                                    font-size: 130%;
+                                    margin: 5px;
+                                    color: white;
+                                    transition: 0.3s;
+                                    &:hover {
+                                        animation: shake 0.3s infinite alternate;
+                                        color: gold;
+                                        & ~ label {
+                                            animation: shake 0.3s infinite alternate;
+                                            color: gold;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #order-cart {
+                display: flex;
+                flex: 0 0 100px;
+                border-radius: 10px;
+                margin: 10px;
+                button {
+                    flex: 1 1;
+                    margin: 20px;
+                    background-color: #f13c20;
+                    border: none;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: bolder;
+                    font-size: 20px;
+                    transition: 0.5s;
+                    &:hover {
+                        transform: scale(1.1);
+                        i {
+                            margin: 5px;
+                            margin-left: 10px;
+                            animation: shake 1s infinite alternate;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes shake {
+    from {
+        transform: scale(1.5) rotate(-15deg);
+    }
+    to {
+        transform: scale(1.5) rotate(15deg);
+    }
+}

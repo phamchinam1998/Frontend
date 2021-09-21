@@ -1,0 +1,237 @@
+#nav-main-container {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background-image: linear-gradient(to bottom, #f13c20, #f17e20);
+    #nav-main {
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        #item-1 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 25%;
+            #left {
+                display: flex;
+                flex: 0 1 600px;
+                .item {
+                    cursor: pointer;
+                    &:not(:first-child)::before {
+                        color: white;
+                        content: "| ";
+                        margin-right: 10px;
+                    }
+                    list-style-type: none;
+                    margin: 5px;
+                    flex: 1 1;
+                    * {
+                        display: inline-block;
+                        color: white;
+                        text-decoration: none;
+                        margin-right: 5px;
+                        &:hover:not(i) {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            #right {
+                flex: 1 1 200px;
+                #account-btn {
+                    height: 100%;
+                    float: right;
+                    color: white;
+                    border: none;
+                    font-size: 105%;
+                    * {
+                        color: white;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                #login-btn {
+                    height: 100%;
+                    float: right;
+                    color: white;
+                    border: none;
+                    background-color: rgba(255, 255, 255, 0);
+                    font-size: 105%;
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        #item-2 {
+            display: flex;
+            width: 100%;
+            height: 75%;
+            #logo {
+                flex: 0 0 200px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            #search-nav {
+                flex: 1 1;
+                #search-bar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 65%;
+                }
+                #nav-bar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 35%;
+                    div {
+                        display: flex;
+                        width: 80%;
+                        li {
+                            margin: 8px;
+                            flex: 1 1;
+                            list-style-type: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                            * {
+                                text-align: center;
+                                font-weight: bolder;
+                                color: white;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            #cart {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 0 0 200px;
+                #cart-container {
+                    width: 40%;
+                    height: 70%;
+                    #cart-icon {
+                        transition: 0.3s;
+                        cursor: pointer;
+                        color: white;
+                        font-size: 50px;
+                    }
+                    &:hover {
+                        #cart-icon,
+                        #cart-notice {
+                            transform: scale(1.1);
+                        }
+                        #cart-popover {
+                            visibility: visible;
+                            height: 400px;
+                        }
+                    }
+                    #cart-popover {
+                        visibility: hidden;
+                        position: absolute;
+                        top: 65%;
+                        right: -35px;
+                        width: 500px;
+                        height: 0px;
+                        transition: 0.5s ease 0.3s;
+                        overflow: hidden;
+                        span {
+                            visibility: inherit;
+                            position: absolute;
+                            top: 5px;
+                            left: 68%;
+                            transform: rotate(45deg);
+                            width: 20px;
+                            height: 20px;
+                            background-color: #ffcf21;
+                        }
+                        #cart-item {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 95%;
+                            #top-nav {
+                                flex: 0 0 60px;
+                                background-color: #ffcf21;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                            }
+                            #cart-content {
+                                flex: 1 1;
+                                background-color: white;
+                                overflow-y: scroll;
+                                -ms-overflow-style: none;
+                                scrollbar-width: none;
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+                                #empty-cart-img {
+                                    width: 100%;
+                                    height: 95%;
+                                    object-fit: contain;
+                                }
+                            }
+                            #bot-nav {
+                                display: flex;
+                                flex: 0 0 60px;
+                                background-color: #ffcf21;
+                                border-bottom-left-radius: 10px;
+                                border-bottom-right-radius: 10px;
+                                overflow: hidden;
+                                button,
+                                #buy-now-btn {
+                                    border: none;
+                                    font-size: 150%;
+                                    color: white;
+                                    cursor: pointer;
+                                    font-weight: bolder;
+                                    i {
+                                        transition: 0.5s;
+                                    }
+                                    &:hover {
+                                        i {
+                                            transform: scale(1.2);
+                                        }
+                                    }
+                                }
+                                #buy-now-btn {
+                                    margin-top: 15px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    flex: 1 1;
+                                    background-color: #ffcf21;
+                                }
+                                #delete-all-cart-btn {
+                                    flex: 0 0 60px;
+                                    background-color: rgb(201, 12, 12);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

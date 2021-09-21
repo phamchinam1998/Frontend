@@ -1,0 +1,112 @@
+#account-dashboard-navigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+    .acc-nav-item {
+        flex: 1 0 40px;
+        text-decoration: none;
+        color: black;
+        box-sizing: border-box;
+        padding: 10px;
+        display: block;
+        &:hover {
+            background-color: white;
+        }
+        .toggle-nav-item {
+            overflow: hidden;
+            height: 0;
+            display: flex;
+            transition: 0.5s;
+            flex-direction: column;
+            * {
+                color: black;
+                text-decoration: none;
+                border-bottom: 1px solid #ccc;
+                flex: 1 1 30px;
+                margin: 2px;
+                padding: 5px;
+                padding-left: 25px;
+                padding-top: 15px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        i {
+            margin: 3px;
+        }
+    }
+}
+#account-modal-container {
+    margin-left: 200px;
+    #account-modal-title {
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: rgb(46, 46, 46);
+        h3 {
+            color: white;
+            margin: 0;
+        }
+    }
+    #account-modal-content {
+        width: 50%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        * {
+            white-space: nowrap;
+        }
+        .account-modal-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex: 0 0 50px;
+            i {
+                margin: 5px;
+            }
+            label {
+                flex: 0 0 200px;
+            }
+            #check-user-btn {
+                cursor: pointer;
+                margin: 5px;
+                padding: 5px;
+                background-color: #ccc;
+                border-radius: 5px;
+            }
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+                flex: 1 1;
+                height: 20px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                cursor: pointer;
+                margin: 10px;
+                color: white;
+                font-weight: bolder;
+                font-size: 25px;
+                border-radius: 10px;
+                border: none;
+                background-image: linear-gradient(to right, rgb(69, 69, 194), rgb(2, 2, 212));
+                flex: 1 0 200px;
+                height: 60px;
+                * {
+                    text-decoration: none;
+                    color: white;
+                }
+                &:hover {
+                    box-shadow: 2px 2px 4px #ccc;
+                }
+            }
+        }
+    }
+}
