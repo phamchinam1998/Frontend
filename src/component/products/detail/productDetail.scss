@@ -280,6 +280,10 @@
                 flex: 0 0 100px;
                 border-radius: 10px;
                 margin: 10px;
+                * {
+                    color: whitesmoke;
+                    text-decoration: none;
+                }
                 button {
                     flex: 1 1;
                     margin: 20px;

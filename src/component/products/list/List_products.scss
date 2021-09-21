@@ -181,6 +181,10 @@
                             font-weight: bolder;
                             width: 120px;
                             float: right;
+                            * {
+                                color: white;
+                                text-decoration: none;
+                            }
                         }
                         #detail-btn {
                             * {

@@ -6,7 +6,7 @@ import BlankAvatar from './blankava.png';
 import SignOutPopup from '../popup/signout';
 import { useDispatch, useSelector } from 'react-redux';
 import { SellerAuthorization } from '../../../redux/action/reRender';
-import Loading from '../../loading/loading';
+// import Loading from '../../loading/loading';
 
 function SellerNavigation() {
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function SellerNavigation() {
                     <div id="avatar-info">
                         <img src={BlankAvatar} alt="" />
                         <div>
-                            <h5>{seller_data.seller_name ? seller_data.seller_name : <Loading />}</h5>
+                            <h5>{seller_data.seller_name}</h5>
                             <i onClick={() => { SignOut() }} className="fa fa-sign-out" aria-hidden="true"></i>
                         </div>
                     </div>

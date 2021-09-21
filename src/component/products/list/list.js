@@ -35,7 +35,7 @@ export default function List(props) {
                     </div>
                     <div id="product-btn">
                         <button id="detail-btn"><Link to={`/products/detail/${props.products._id}`}>Chi tiết</Link></button>
-                        <button id="buy-now-btn">Mua ngay</button>
+                        <button onClick={() => addCart(props.products._id)} id="buy-now-btn"><Link to="/payment"> Mua ngay</Link></button>
                     </div>
                 </div>
             </div >

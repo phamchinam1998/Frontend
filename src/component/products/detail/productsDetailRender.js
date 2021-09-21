@@ -3,6 +3,7 @@ import './productDetail.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { Render } from '../../../redux/action/reRender';
 import { AddCart } from '../../navigation/cart/modifycart';
+import { Link } from "react-router-dom";
 import rate4 from './rate/rate-4.png';
 
 export default function ProductsDetailRender(props) {
@@ -31,9 +32,9 @@ export default function ProductsDetailRender(props) {
         document.getElementById("main-img").getElementsByTagName("IMG")[0].setAttribute("alt", index);
     }
 
-    const RenderImg = (url) => {
+    const RenderImg = (url, index) => {
         return (
-            <div className="item-img" >
+            <div key={index} className="item-img" >
                 <img src={url} alt="" onClick={(e) => { MainIMG(e.target) }} />
             </div>
         )
@@ -74,12 +75,12 @@ export default function ProductsDetailRender(props) {
                     <div id="product-image">
 
                         <div id="main-img">
-                            <i onClick={() => NavIMG("NEXT")} class="fa fa-chevron-left" aria-hidden="true"></i>
+                            <i onClick={() => NavIMG("NEXT")} className="fa fa-chevron-left" aria-hidden="true"></i>
                             <img src={mainImg} alt="0" />
-                            <i onClick={() => NavIMG("PREV")} class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <i onClick={() => NavIMG("PREV")} className="fa fa-chevron-right" aria-hidden="true"></i>
                         </div>
                         <div id="list-img">
-                            {imgURL.map(url => RenderImg(url))}
+                            {imgURL.map((url, index) => RenderImg(url, index))}
                         </div>
                     </div>
                     <div className="detail-info">
@@ -97,7 +98,7 @@ export default function ProductsDetailRender(props) {
                                         <h5>Xuất xứ</h5>:<h6>{props.info.origin}</h6>
                                     </div>
                                     <div className="item-info">
-                                        <h5>Giá</h5>:<h6>{props.info.price}</h6>
+                                        <h5>Giá</h5>:<h6>{props.info.price ? props.info.price.toLocaleString() : <></>} VND</h6>
                                     </div>
                                     <div id="description">
                                         <h5>Mô tả :</h5>
@@ -116,31 +117,31 @@ export default function ProductsDetailRender(props) {
                                     </div>
                                     <div id="item-2">
                                         <li>
-                                            <span className="star">5 <i class="fa fa-star-o" aria-hidden="true"></i>: </span>
+                                            <span className="star">5 <i className="fa fa-star-o" aria-hidden="true"></i>: </span>
                                             <span className="progress-rate">
                                                 <div style={{ width: "40%" }}></div>
                                             </span>
                                         </li>
                                         <li>
-                                            <span className="star">4 <i class="fa fa-star-o" aria-hidden="true"></i>: </span>
+                                            <span className="star">4 <i className="fa fa-star-o" aria-hidden="true"></i>: </span>
                                             <span className="progress-rate">
                                                 <div style={{ width: "20%" }}></div>
                                             </span>
                                         </li>
                                         <li>
-                                            <span className="star">3 <i class="fa fa-star-o" aria-hidden="true"></i>: </span>
+                                            <span className="star">3 <i className="fa fa-star-o" aria-hidden="true"></i>: </span>
                                             <span className="progress-rate">
                                                 <div style={{ width: "10%" }}></div>
                                             </span>
                                         </li>
                                         <li>
-                                            <span className="star">2 <i class="fa fa-star-o" aria-hidden="true"></i>: </span>
+                                            <span className="star">2 <i className="fa fa-star-o" aria-hidden="true"></i>: </span>
                                             <span className="progress-rate">
                                                 <div style={{ width: "10%" }}></div>
                                             </span>
                                         </li>
                                         <li>
-                                            <span className="star">1 <i class="fa fa-star-o" aria-hidden="true"></i>: </span>
+                                            <span className="star">1 <i className="fa fa-star-o" aria-hidden="true"></i>: </span>
                                             <span className="progress-rate">
                                                 <div style={{ width: "20%" }}></div>
                                             </span>
@@ -150,23 +151,23 @@ export default function ProductsDetailRender(props) {
                                         <h4>Đánh giá</h4>
                                         <form id="rate-form">
                                             <input className="star-rate" id="star-5" type="radio" name="star-rate" value="5" onClick={() => { sendRate(5) }} />
-                                            <label for="star-5" class="fa fa-star" aria-hidden="true" />
+                                            <label htmlFor="star-5" className="fa fa-star" aria-hidden="true" />
                                             <input className="star-rate" id="star-4" type="radio" name="star-rate" value="4" onClick={() => { sendRate(4) }} />
-                                            <label for="star-4" class="fa fa-star" aria-hidden="true" />
+                                            <label htmlFor="star-4" className="fa fa-star" aria-hidden="true" />
                                             <input className="star-rate" id="star-3" type="radio" name="star-rate" value="3" onClick={() => { sendRate(3) }} />
-                                            <label for="star-3" class="fa fa-star" aria-hidden="true" />
+                                            <label htmlFor="star-3" className="fa fa-star" aria-hidden="true" />
                                             <input className="star-rate" id="star-2" type="radio" name="star-rate" value="2" onClick={() => { sendRate(2) }} />
-                                            <label for="star-2" class="fa fa-star" aria-hidden="true" />
+                                            <label htmlFor="star-2" className="fa fa-star" aria-hidden="true" />
                                             <input className="star-rate" id="star-1" type="radio" name="star-rate" value="1" onClick={() => { sendRate(1) }} />
-                                            <label for="star-1" class="fa fa-star" aria-hidden="true" />
+                                            <label htmlFor="star-1" className="fa fa-star" aria-hidden="true" />
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="order-cart">
-                            <button onClick={() => addCart(props.info._id)} id="cart">Thêm vào giỏ  <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                            <button id="order">Đặt hàng  <i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
+                            <button onClick={() => addCart(props.info._id)} id="cart">Thêm vào giỏ  <i className="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                            <button onClick={() => addCart(props.info._id)} id="order"><Link to="/payment">Mua Ngay  <i className="fa fa-shopping-bag" aria-hidden="true"></i></Link></button>
                         </div>
                     </div>
                 </div>
