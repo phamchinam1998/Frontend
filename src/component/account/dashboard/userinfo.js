@@ -15,15 +15,17 @@ export default function UserInfo() {
                 setLoading(true);
                 token = window.localStorage.getItem('Customer-token');
                 if (token) {
-                    axios.get(`https://demo-ecomerce-backend.herokuapp.com/authorization/customer/get`, {
-                        headers: {
-                            Authorization: token,
-                        }
-                    })
-                        .then(res => {
-                            setUserdata(res.data);
-                            setLoading(false);
-                        });
+                    (async function () {
+                        await axios.get(`https://demo-ecomerce-backend.herokuapp.com/authorization/customer/get`, {
+                            headers: {
+                                Authorization: token,
+                            }
+                        })
+                            .then(res => {
+                                setUserdata(res.data);
+                                setLoading(false);
+                            });
+                    })();
                 }
                 setLoading(false);
                 break;

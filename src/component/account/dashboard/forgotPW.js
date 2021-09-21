@@ -5,7 +5,7 @@ import Loading from "../../loading/loading";
 export default function ForgotPW() {
     const [loading, setLoading] = useState(false);
 
-    const getValue = () => {
+    const getValue = async () => {
         const checkEmpty = Object.values(document.getElementsByClassName("require-info")).every(e => e.value !== "");
         if (checkEmpty) {
             const data = {
@@ -13,7 +13,7 @@ export default function ForgotPW() {
                 email: document.getElementById("email").value,
             }
             setLoading(true)
-            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/forgotpw`, data)
+            await axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/forgotpw`, data)
                 .then(res => {
                     if (res.data) {
                         alert("Vui lòng kiểm tra mail để lấy mật khẩu mới");

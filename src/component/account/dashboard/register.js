@@ -10,7 +10,7 @@ export default function Register() {
     const [redirect, setRedirect] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const getValue = () => {
+    const getValue = async () => {
         const checkEmpty = Object.values(document.getElementsByClassName("require-info")).every(e => e.value !== "");
         if (checkEmpty && validateform) {
             const data = {
@@ -24,7 +24,7 @@ export default function Register() {
                 type: document.getElementById("account-type").value,
             }
             setLoading(true);
-            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/register`, data)
+            await axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/register`, data)
                 .then(e => {
                     alert("Đăng ký thành công, vui lòng kiểm tra mail để xác thực tài khoản");
                     setLoading(false);

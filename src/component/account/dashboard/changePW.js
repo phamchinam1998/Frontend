@@ -16,7 +16,7 @@ export default function ChangePW() {
         i_tag.style.display = "inline";
     }
 
-    const getValue = () => {
+    const getValue = async () => {
         const checkEmpty = Object.values(document.getElementsByClassName("require-info")).every(e => e.value !== "");
         if (checkEmpty && validateform) {
             const data = {
@@ -26,7 +26,7 @@ export default function ChangePW() {
                 new_password: document.getElementById("new-password").value,
             }
             setLoading(true);
-            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/changepassword`, data)
+            await axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/changepassword`, data)
                 .then(res => {
                     if (res.data) {
                         alert("Đổi mật khẩu thành công");
