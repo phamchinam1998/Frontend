@@ -74,12 +74,12 @@ export default function Register() {
         }
     }
 
-    const ValidateUsername = (e) => {
+    const ValidateUsername = async (e) => {
         const str = e.target.previousSibling.value;
         const result = validateStr.Selector(str, "UserName");
         const i_tag = e.target.nextSibling;
         if (result) {
-            axios.get(`https://demo-ecomerce-backend.herokuapp.com/account/validateUserName?username=${str}`)
+            await axios.get(`https://demo-ecomerce-backend.herokuapp.com/account/validateUserName?username=${str}`)
                 .then(res => {
                     if (res.data) {
                         i_tag.style.display = "inline";
