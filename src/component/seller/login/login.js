@@ -15,7 +15,7 @@ function SellerLogin() {
     useEffect(() => {
         const token = window.localStorage.getItem('Ecom-seller');
         if (token) {
-            axios.get(`http://localhost:8080/authorization/seller/get/`, {
+            axios.get(`https://demo-ecomerce-backend.herokuapp.com/authorization/seller/get/`, {
                 headers: {
                     Authorization: token
                 }
@@ -38,7 +38,7 @@ function SellerLogin() {
         const username = document.getElementById("InputEmail").value;
         const password = document.getElementById("InputPassword").value;
         setLoading(true)
-        axios.post(`http://localhost:8080/account/login`, {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/login`, {
             username: username,
             password: password,
             type: "seller",

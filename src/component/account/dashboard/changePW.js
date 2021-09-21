@@ -26,7 +26,7 @@ export default function ChangePW() {
                 new_password: document.getElementById("new-password").value,
             }
             setLoading(true);
-            axios.post(`http://localhost:8080/account/changepassword`, data)
+            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/changepassword`, data)
                 .then(res => {
                     if (res.data) {
                         alert("Đổi mật khẩu thành công");

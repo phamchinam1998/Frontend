@@ -107,7 +107,7 @@ export function UpdateModal(props) {
             delete_img_url: imgDeleteList,
         }
         const token = window.localStorage.getItem("Ecom-seller");
-        await axios.post(`http://localhost:8080/authorization/products/update/`, params,
+        await axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/products/update/`, params,
             {
                 headers: {
                     Authorization: token,

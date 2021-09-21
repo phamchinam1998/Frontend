@@ -13,7 +13,7 @@ export default function ForgotPW() {
                 email: document.getElementById("email").value,
             }
             setLoading(true)
-            axios.post(`http://localhost:8080/account/forgotpw`, data)
+            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/forgotpw`, data)
                 .then(res => {
                     if (res.data) {
                         alert("Vui lòng kiểm tra mail để lấy mật khẩu mới");

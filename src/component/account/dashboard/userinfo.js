@@ -15,7 +15,7 @@ export default function UserInfo() {
                 setLoading(true);
                 token = window.localStorage.getItem('Customer-token');
                 if (token) {
-                    axios.get(`http://localhost:8080/authorization/customer/get`, {
+                    axios.get(`https://demo-ecomerce-backend.herokuapp.com/authorization/customer/get`, {
                         headers: {
                             Authorization: token,
                         }
@@ -32,7 +32,7 @@ export default function UserInfo() {
                 setLoading(true);
                 token = window.localStorage.getItem('Ecom-seller')
                 if (token) {
-                    axios.get(`http://localhost:8080/authorization/seller/get`, {
+                    axios.get(`https://demo-ecomerce-backend.herokuapp.com/authorization/seller/get`, {
                         headers: {
                             Authorization: token,
                         }

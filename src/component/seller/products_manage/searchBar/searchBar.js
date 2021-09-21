@@ -14,7 +14,7 @@ export default function SearchBar(props) {
     let time = 200;
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/products/getname?shop_id=${props.shop_id}`).then(resolve => setData(Object.values(resolve.data)))
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/getname?shop_id=${props.shop_id}`).then(resolve => setData(Object.values(resolve.data)))
         return () => {
             setData([]);
         }

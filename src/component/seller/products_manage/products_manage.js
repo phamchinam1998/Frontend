@@ -22,7 +22,7 @@ export default function ProductsManage() {
         const query = {
             query: { shop_id: seller_data.shop_id }
         }
-        axios.post(`http://localhost:8080/products/list?current_page=${params.page}`, query,)
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/products/list?current_page=${params.page}`, query,)
             .then((response) => {
                 setData(response.data.data);
             });

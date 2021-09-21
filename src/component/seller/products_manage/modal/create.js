@@ -79,7 +79,7 @@ export function CreateModal(props) {
             img_url: img_url,
         }
         const token = window.localStorage.getItem("Ecom-seller");
-        await axios.post(`http://localhost:8080/authorization/products/add/`, params, {
+        await axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/products/add/`, params, {
             headers: {
                 Authorization: token,
             }

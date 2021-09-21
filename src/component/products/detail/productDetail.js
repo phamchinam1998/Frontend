@@ -9,7 +9,7 @@ export default function ProductsDetail() {
     const params = useParams();
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:8080/products/get?id=${params.id}`).then(res => {
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/get?id=${params.id}`).then(res => {
             setData(res.data)
             setLoading(false);
         })

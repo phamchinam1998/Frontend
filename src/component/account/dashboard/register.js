@@ -24,7 +24,7 @@ export default function Register() {
                 type: document.getElementById("account-type").value,
             }
             setLoading(true);
-            axios.post(`http://localhost:8080/account/register`, data)
+            axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/register`, data)
                 .then(e => {
                     alert("Đăng ký thành công, vui lòng kiểm tra mail để xác thực tài khoản");
                     setLoading(false);
@@ -79,7 +79,7 @@ export default function Register() {
         const result = validateStr.Selector(str, "UserName");
         const i_tag = e.target.nextSibling;
         if (result) {
-            axios.get(`http://localhost:8080/account/validateUserName?username=${str}`)
+            axios.get(`https://demo-ecomerce-backend.herokuapp.com/account/validateUserName?username=${str}`)
                 .then(res => {
                     if (res.data) {
                         i_tag.style.display = "inline";

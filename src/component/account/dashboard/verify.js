@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function AccountVerify() {
     const params = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:8080/account/active?account_id=${params.account_id}`);
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/account/active?account_id=${params.account_id}`);
     }, [params])
 
     return (

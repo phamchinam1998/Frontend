@@ -13,7 +13,7 @@ const CartItem = (props) => {
     const dispatch = useDispatch();
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:8080/products/get?id=${props.id}`).then(res => {
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/get?id=${props.id}`).then(res => {
             setData(res.data);
             setMainIMG(res.data.img_url[0]);
         })

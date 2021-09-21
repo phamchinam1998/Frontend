@@ -20,7 +20,7 @@ function Products() {
         }
         Object.assign(query, { sort: sort });
         setLoading(true);
-        axios.post(`http://localhost:8080/products/list?current_page=${params.page}`, query).then(res => {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/products/list?current_page=${params.page}`, query).then(res => {
             if (res.data.data.length > 0) {
                 setData(res.data.data);
                 setPagin({
@@ -30,7 +30,7 @@ function Products() {
                 setLoading((false));
             }
             else {
-                axios.get(`http://localhost:8080/products/listdefault?keyword=${params.tags}&&current_page=${params.page}`).then(res => {
+                axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/listdefault?keyword=${params.tags}&&current_page=${params.page}`).then(res => {
                     setData(res.data.data);
                     setPagin({
                         cur_page: params.page,

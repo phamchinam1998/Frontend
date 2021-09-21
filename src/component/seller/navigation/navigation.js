@@ -10,7 +10,6 @@ import Loading from '../../loading/loading';
 
 function SellerNavigation() {
     const dispatch = useDispatch();
-    // const [loading, setLoading] = useState(false);
     const seller_data = useSelector(state => state.sellerAuthorization);
     const [signOut, setSignOut] = useState(false);
 

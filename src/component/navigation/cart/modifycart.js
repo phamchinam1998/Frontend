@@ -12,7 +12,7 @@ export function AddCart(item_id, token, authen) {
     }
     else window.localStorage.setItem('PCN-Cart', `${item_id}`);
     if (authen === "Allow") {
-        axios.post(`http://localhost:8080/authorization/cart/additem`, {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/cart/additem`, {
             token: token,
             item_id: item_id,
         }).then(function (response) {
@@ -35,7 +35,7 @@ export function DeleteCartItem(id, token, authen) {
     arr.splice(index, 1)
     window.localStorage.setItem('PCN-Cart', arr.join('&'));
     if (authen === "Allow") {
-        axios.post(`http://localhost:8080/authorization/cart/deleteitem`, {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/cart/deleteitem`, {
             token: token,
             item_id: id,
         }).then(function (response) {
@@ -54,7 +54,7 @@ export function DeleteCartItem(id, token, authen) {
 export function DeleteCart(token, authen) {
     window.localStorage.removeItem('PCN-Cart');
     if (authen === "Allow") {
-        axios.post(`http://localhost:8080/authorization/cart/deleteall`, {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/cart/deleteall`, {
             token: token,
         }).then(function (response) {
             // handle success

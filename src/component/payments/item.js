@@ -12,7 +12,7 @@ export default function PaymentItem(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/products/get?id=${props.id}`).then(res => {
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/get?id=${props.id}`).then(res => {
             setData(res.data);
             setMainIMG(res.data.img_url[0]);
             setUnitPrice(res.data.price);

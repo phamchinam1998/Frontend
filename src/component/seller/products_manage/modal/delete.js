@@ -9,7 +9,7 @@ export default function DeleteModal(props) {
     const deleteProduct = useSelector((state) => state.productHandle);
     const Delete = async () => {
         const token = window.localStorage.getItem("Ecom-seller");
-        await axios.post(`http://localhost:8080/authorization/products/delete/`, deleteProduct,
+        await axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/products/delete/`, deleteProduct,
             {
                 headers: {
                     Authorization: token
