@@ -16,7 +16,7 @@ export default function MainSearchBar(props) {
     let time = 200;
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/products/getname`).then(res => {
+        axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/getname`).then(res => {
             const tag = Object.values(res.data.tag_list);
             tag.splice(0, 1);
             setData(tag.flat());
