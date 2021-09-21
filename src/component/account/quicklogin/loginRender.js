@@ -30,7 +30,7 @@ export default function LoginModal() {
         const user = document.getElementById("InputEmail").value;
         const password = document.getElementById("InputPassword").value;
         setLoading(true);
-        axios.post(`http://localhost:8080/account/login`, {
+        axios.post(`https://demo-ecomerce-backend.herokuapp.com/account/login`, {
             username: user,
             password: password,
             type: "customer",
@@ -44,7 +44,7 @@ export default function LoginModal() {
                     const token = `Bearer ${response.data.token}`;
                     window.localStorage.setItem('Customer-token', token);
                     const cart = window.localStorage.getItem('PCN-Cart');
-                    axios.post(`http://localhost:8080/authorization/cart/cartsync`, {
+                    axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/cart/cartsync`, {
                         cart: cart,
                     }, {
                         headers: {
