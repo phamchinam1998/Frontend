@@ -14,7 +14,7 @@ export function AddCart(item_id, token, authen) {
     if (authen === "Allow") {
         const data = {
             item_id: item_id,
-        }
+        };
         axios.post(`https://demo-ecomerce-backend.herokuapp.com/authorization/cart/additem`, data, {
             headers: {
                 Authorization: token
@@ -50,7 +50,7 @@ export function DeleteCartItem(id, token, authen) {
             // handle success
             console.log(response);
         })
-            .catch(function (error) {      // DONE
+            .catch(function (error) {      
                 // handle error
                 console.log(error);
             })
