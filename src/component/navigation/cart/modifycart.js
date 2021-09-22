@@ -20,11 +20,8 @@ export function AddCart(item_id, token, authen) {
                 Authorization: token
             }
         }).then(function (response) {
-            // handle success
-            console.log(response);
         })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
             .then(function () {
@@ -47,11 +44,8 @@ export function DeleteCartItem(id, token, authen) {
                 Authorization: token
             }
         }).then(function (response) {
-            // handle success
-            console.log(response);
         })
-            .catch(function (error) {      
-                // handle error
+            .catch(function (error) {
                 console.log(error);
             })
             .then(function () {
@@ -68,11 +62,8 @@ export function DeleteCart(token, authen) {
                 Authorization: token
             }
         }).then(function (response) {
-            // handle success
-            console.log(response);
         })
-            .catch(function (error) {          //DONE
-                // handle error
+            .catch(function (error) {
                 console.log(error);
             })
             .then(function () {
