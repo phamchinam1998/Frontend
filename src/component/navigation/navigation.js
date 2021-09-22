@@ -11,16 +11,12 @@ import MainSearchBar from './search/search';
 
 const Navigation = () => {
     const authen = useSelector((status) => status.authorization);
-    const token = window.localStorage.getItem('PCN');
+    const token = window.localStorage.getItem('Customer-token');
     const dispatch = useDispatch();
     const deleteAll = () => {
         DeleteCart(token, authen);
         dispatch(Render());
     }
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <>

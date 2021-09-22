@@ -5,7 +5,7 @@ import { Render } from '../../../redux/action/reRender';
 import { AddCart } from '../../navigation/cart/modifycart';
 
 export default function List(props) {
-    const token = window.localStorage.getItem('PCN');
+    const token = window.localStorage.getItem('Customer-token');
     const authen = useSelector((status) => status.authorization);
     const dispatch = useDispatch();
     const addCart = (item_id) => {

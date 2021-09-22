@@ -7,19 +7,18 @@ import { Link } from 'react-router-dom';
 import { DeleteCartItem } from './modifycart';
 
 const CartItem = (props) => {
-    const [token, setToken] = useState("");
     const authen = useSelector((status) => status.authorization);
     const [mainImg, setMainIMG] = useState('');
     const dispatch = useDispatch();
     const [data, setData] = useState([]);
     useEffect(() => {
-        setToken(window.localStorage.getItem('PCN'));
         axios.get(`https://demo-ecomerce-backend.herokuapp.com/products/get?id=${props.id}`).then(res => {
             setData(res.data);
             setMainIMG(res.data.img_url[0]);
         })
     }, [props.id]);
     const deleteItem = () => {
+        const token = window.localStorage.getItem('Customer-token');
         DeleteCartItem(data._id, token, authen);
         dispatch(Render());
     }
